@@ -15,6 +15,6 @@ class NotEmptyString extends Validator
 
     public function validate()
     {
-        return $this->getValue() === '';
+        return (string)$this->getValue() !== '';
     }
 }
