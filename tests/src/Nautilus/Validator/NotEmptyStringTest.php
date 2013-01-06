@@ -11,19 +11,19 @@ class NotEmptyStringTest extends \PHPUnit_Framework_TestCase
     {
         $validator = new NotEmptyString();
         $validator->setValue('test');
-        $this->assertFalse($validator->validate());
+        $this->assertTrue($validator->validate());
 
         $validator->setValue('0');
-        $this->assertFalse($validator->validate());
+        $this->assertTrue($validator->validate());
 
         $validator->setValue(0);
-        $this->assertFalse($validator->validate());
+        $this->assertTrue($validator->validate());
     }
 
     public function testFalses()
     {
         $validator = new NotEmptyString();
         $validator->setValue('');
-        $this->assertTrue($validator->validate());
+        $this->assertFalse($validator->validate());
     }
 }
