@@ -6,4 +6,6 @@ interface ValidatorInterface
 {
 
     public function validate();
+
+    public function getErrors();
 }
